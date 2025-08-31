@@ -1,2 +1,75 @@
-# calorie-detector
-Detects common foods in images using YOLOv8 and returns their estimated calories, protein per serving, nutrition score, and advice
+# 🍔🥗 Food Calorie & Protein Detector  
+
+## 📌 Overview  
+This project detects common foods in images using **YOLOv8** and returns their **estimated calories, protein per serving, nutrition score, and advice**.  
+The goal is to demonstrate an **end-to-end computer vision pipeline**: dataset preparation → model training → evaluation → prediction overlay with nutrition info.  
+
+---
+
+## 📂 Dataset  
+- ~300 labeled images across **7 food classes**:  
+  - `pizza`, `burger`, `fries`, `fried-egg`, `cereal`, `salad`, `steak`  
+- Images manually labeled in **Roboflow**, exported in YOLO format.  
+- Train/val/test split configured via `data.yaml`.  
+
+> Full dataset is available separately here: [Google Drive Link](https://your-dataset-link)  
+> (Repo only includes a few sample images for demo.)  
+
+---
+
+## ⚙️ Training  
+- **Model:** YOLOv8n (fine-tuned from pretrained weights)  
+- **Epochs:** 50  
+- **Input size:** 640×640  
+- **Frameworks:** `ultralytics`, `pytorch`, `opencv`, `pillow`  
+
+Training code: [`notebooks/00_train.ipynb`](notebooks/00_train.ipynb)  
+
+---
+
+## 📊 Results  
+
+- **mAP@0.5 (all classes): 0.86**  
+- Strongest classes: Pizza, Fried-Egg, Cereal (>0.99)  
+- Weaker classes: Fries, Steak (~0.67)  
+
+| Metric      | Value |
+|-------------|-------|
+| mAP@0.5     | 0.859 |
+| Precision   | 0.82  |
+| Recall      | 0.94  |
+
+### Curves & Plots  
+- F1 vs Confidence  
+- Precision vs Confidence  
+- Precision–Recall  
+- Confusion Matrix  
+
+<p align="center">
+  <img src="results.png" width="70%">
+</p>  
+
+---
+
+## 🖼️ Predictions with Nutrition Footer  
+
+Each prediction includes:  
+- Calories & protein per serving  
+- Nutrition grade (A–D)  
+- Food-specific advice (e.g., *“Add lean protein to balance this meal”*)  
+
+<p align="center">
+  <img src="sample_images/pred_example.jpg" width="70%">
+</p>  
+
+Code: [`src/03_predict_footer_msg.py`](src/03_predict_footer_msg.py)  
+
+---
+
+## ▶️ How to Run  
+
+### 1. Clone & install dependencies  
+```bash
+git clone https://github.com/yourname/food-calorie-detector.git
+cd food-calorie-detector
+pip install -r requirements.txt
