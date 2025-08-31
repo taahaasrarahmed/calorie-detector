@@ -85,10 +85,29 @@ Code: [`src/03_predict_footer_msg.py`](src/03_predict_footer_msg.py)
 
 ---
 
-## ▶️ How to Run  
+## 🚧 Enhancements / Next Steps  
 
-### 1. Clone & install dependencies  
-```bash
-git clone https://github.com/yourname/food-calorie-detector.git
-cd food-calorie-detector
-pip install -r requirements.txt
+### 1) Data & Classes  
+- Expand dataset (1–2k images, balanced classes).  
+- Add more foods: pasta, sandwich, rice bowls, desserts, drinks.  
+- Use stronger augmentations and improve labeling quality.  
+
+### 2) Serving-Size Estimation  
+- Detect **plate/bowl** as reference object.  
+- Estimate portion size from `food_area / plate_area`.  
+- Scale calories & protein accordingly.  
+
+### 3) Richer Nutrition Metrics  
+- Add carbs, fat, fiber, sugar, sodium.  
+- Show macro ratios (protein per kcal, % split).  
+- Simple health indicators (e.g., traffic-light style).  
+
+### 4) Modeling & Evaluation  
+- Try larger YOLO models or segmentation for portion area.  
+- More metrics: mAP@0.5–0.95, MAE of nutrition estimates.  
+- Calibrate confidence thresholds.  
+
+### 5) Deployment  
+- Streamlit demo with image upload + live nutrition panel.  
+- Option to set plate size or serving presets.  
+- Overlay portion estimate on prediction image.
