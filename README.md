@@ -40,13 +40,19 @@ Training code: [`notebooks/00_train.ipynb`](notebooks/00_train.ipynb)
 | Recall      | 0.94  |
 
 ### Curves & Plots  
-- F1 vs Confidence  
-- Precision vs Confidence  
-- Precision–Recall  
-- Confusion Matrix  
 
 <p align="center">
-  <img src="results.png" width="70%">
+  <img src="results/BoxF1_curve.png" width="45%">
+  <img src="results/BoxP_curve.png" width="45%">
+</p>  
+
+<p align="center">
+  <img src="results/BoxPR_curve.png" width="45%">
+  <img src="results/confusion_matrix_normalized.png" width="45%">
+</p>  
+
+<p align="center">
+  <img src="results/results.png" width="70%">
 </p>  
 
 ---
@@ -58,8 +64,21 @@ Each prediction includes:
 - Nutrition grade (A–D)  
 - Food-specific advice (e.g., *“Add lean protein to balance this meal”*)  
 
+### Example Outputs  
+
 <p align="center">
-  <img src="sample_images/pred_example.jpg" width="70%">
+  <img src="sample_results/1.jpg" width="45%">
+  <img src="sample_results/2.jpg" width="45%">
+</p>  
+
+<p align="center">
+  <img src="sample_results/3.jpg" width="45%">
+  <img src="sample_results/4.jpg" width="45%">
+</p>  
+
+<p align="center">
+  <img src="sample_results/5.jpg" width="45%">
+  <img src="sample_results/6.jpg" width="45%">
 </p>  
 
 Code: [`src/03_predict_footer_msg.py`](src/03_predict_footer_msg.py)  
