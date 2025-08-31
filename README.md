@@ -9,7 +9,7 @@ The goal is to demonstrate an **end-to-end computer vision pipeline**: dataset p
 ## 📂 Dataset  
 - ~300 labeled images across **7 food classes**:  
   - `pizza`, `burger`, `fries`, `fried-egg`, `cereal`, `salad`, `steak`  
-- Images manually labeled in **Roboflow**, exported in YOLO format.  
+- Images manually labeled/ pre labelled in **Roboflow**, exported in YOLO format.  
 - Train/val/test split configured via `data.yaml`.  
 
 > Full dataset is available separately here: [Roboflow Link](https://app.roboflow.com/ds/qJsgBisufh?key=DYRO4x17CP)  
